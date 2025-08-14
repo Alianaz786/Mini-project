@@ -1,0 +1,321 @@
+/* =====================
+   Root Variables
+===================== */
+:root {
+  --teal: #008080;
+  --coral: #ff6f61;
+  --bg-light: #f9f9f9;
+  --bg-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --text-dark: #222222;
+}
+
+/* =====================
+   Global Styles
+===================== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+main {
+  flex: 1; /* Push footer down if content is short */
+}
+
+/* =====================
+   Navbar
+===================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--teal);
+  padding: 15px 30px;
+  color: white;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--coral);
+  transition: 0.3s;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* =====================
+   Hero Section
+===================== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-img {
+  text-align: center;
+}
+
+.hero-img img {
+  max-width: 300px;
+  border-radius: 10px;
+  animation: zoomIn 1.2s ease;
+}
+
+.hero-img .btn {
+  margin-top: 15px;
+  display: inline-block;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: linear-gradient(45deg, var(--teal), var(--coral));
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* =====================
+   About Section
+===================== */
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  gap: 20px;
+}
+
+.about-wrapper img {
+  width: 250px;
+  border-radius: 50%;
+}
+
+/* =====================
+   Projects Section
+===================== */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+  text-align: center; /* Center text and inline elements */
+}
+
+.card img {
+  display: block;       /* So margin auto works */
+  margin: 0 auto;       /* Centers the image horizontally */
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+
+/* View Button Styling */
+.viewBtn {
+  display: inline-block;
+  background: linear-gradient(45deg, var(--teal), var(--coral));
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.viewBtn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* =====================
+   Modal (Centered)
+===================== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-box img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.modal-box h2 {
+  margin-top: 0;
+  color: var(--teal);
+}
+
+.modal-box p {
+  color: var(--text-dark);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  padding: 5px 12px;
+}
+
+.close-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================
+   Contact Form
+===================== */
+.contact form {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+.form-group label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: gray;
+  transition: 0.3s;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 0.8rem;
+  color: var(--teal);
+}
+
+/* =====================
+   Footer
+===================== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--teal);
+  color: white;
+}
+
+/* =====================
+   Scroll to Top Button
+===================== */
+#scrollBtn {
+  position: fixed;
+  bottom: 20px; 
+  right: 20px;
+  padding: 10px;
+  background: var(--coral);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}

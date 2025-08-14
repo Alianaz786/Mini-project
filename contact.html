@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - Shahzaib</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Shahzaib</div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button id="themeBtn">🌙</button>
+  </header>
+
+  <main>
+    <section class="contact">
+      <h1>Get in Touch</h1>
+      <form id="contactForm">
+        <div class="form-group">
+          <input type="text" id="name" placeholder=" " required>
+          <label for="name">Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder=" " required>
+          <label for="email">Email</label>
+        </div>
+        <div class="form-group">
+          <textarea id="message" placeholder=" " required></textarea>
+          <label for="message">Message</label>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <p id="thankMsg" style="display:none;">✅ Thank you for your message!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Shahzaib. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

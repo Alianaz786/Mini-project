@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects - Shahzaib</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Shahzaib</div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button id="themeBtn">🌙</button>
+  </header>
+
+  <main>
+    <section class="projects">
+      <h1>My Projects</h1>
+      <div class="project-list">
+        <div class="card">
+          <img src="Weather App.jpg" alt="Weather App">
+          <h3>Weather App</h3>
+          <p>Real-time weather updates using API integration.</p>
+          <button class="viewBtn">View</button>
+        </div>
+        <div class="card">
+          <img src="E-Commerce Store.jpg" alt="E-Commerce Store">
+          <h3>E-Commerce Store</h3>
+          <p>Online store with shopping cart and checkout system.</p>
+          <button class="viewBtn">View</button>
+        </div>
+        <div class="card">
+          <img src="Chat Application.jpg" alt="Chat Application">
+          <h3>Chat Application</h3>
+          <p>Live messaging app with real-time socket communication.</p>
+          <button class="viewBtn">View</button>
+        </div>
+      </div>
+    </section>
+
+<div class="modal" id="modal">
+  <span class="close-btn">&times;</span>
+  <div class="modal-box">
+    <img id="modalImg" src="" alt="">
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+  </div>
+</div>
+  </main>
+
+  <footer>
+    <p>© 2025 Shahzaib. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
